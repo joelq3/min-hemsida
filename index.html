@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilfakta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div id="sida1" class="sida">
+    <h2>Bilfakta Sida 1</h2>
+    <img src="bil1.jpg" alt="Bilfakta bild">
+    <ul class="fakta">
+      <li>Bilar drivs vanligtvis med bensin eller elektricitet.</li>
+      <li>Bilar har vanligtvis fyra hjul.</li>
+    </ul>
+    <button class="btn" onclick="visaSida(2)">Nästa Sida</button>
+  </div>
+
+  <div id="sida2" class="sida" style="display: none;">
+    <h2>Bilfakta Sida 2</h2>
+    <img src="bil2.jpg" alt="Bilfakta bild">
+    <ul class="fakta">
+      <li>Den första bilen uppfanns på slutet av 1800-talet.</li>
+      <li>Bilar ger transport för människor och varor.</li>
+      <li>Genomsnittlig livslängd för en bil är cirka 8-12 år.</li>
+    </ul>
+    <button class="btn" onclick="visaSida(1)">Föregående Sida</button>
+    <button class="btn" onclick="visaSida(3)">Nästa Sida</button>
+  </div>
+
+  <div id="sida3" class="sida" style="display: none;">
+    <h2>Bilfakta Sida 3</h2>
+    <img src="bil3.jpg" alt="Bilfakta bild">
+    <ul class="fakta">
+      <li>Den första trafikolyckan med dödlig utgång inträffade 1899.</li>
+      <li>Det finns över en miljard bilar i världen idag.</li>
+    </ul>
+    <button class="btn" onclick="visaSida(2)">Föregående Sida</button>
+  </div>
+</div>
+
+<script>
+  function visaSida(sidaNummer) {
+    var sidor = document.getElementsByClassName('sida');
+    for (var i = 0; i < sidor.length; i++) {
+      sidor[i].style.display = 'none';
+    }
+    document.getElementById('sida' + sidaNummer).style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
